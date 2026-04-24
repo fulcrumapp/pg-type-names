@@ -6,17 +6,10 @@ const config = {
   extensionsToTreatAsEsm: ['.ts'],
   transform: {
     '^.+\\.ts$': [
-      '@swc/jest',
+      'ts-jest',
       {
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-          },
-          target: 'es2022',
-        },
-        module: {
-          type: 'es6',
-        },
+        useESM: true,
+        tsconfig: 'tsconfig.json',
       },
     ],
   },
