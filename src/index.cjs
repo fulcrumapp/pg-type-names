@@ -1,4 +1,3 @@
-const { createRequire } = require('node:module');
 const { join } = require('node:path');
 
 const raw = require(join(__dirname, 'types.json'));

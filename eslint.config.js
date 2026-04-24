@@ -18,6 +18,23 @@ export default tseslint.config(
     },
   },
   {
+    files: ['**/*.cjs'],
+    languageOptions: {
+      sourceType: 'commonjs',
+      globals: {
+        require: 'readonly',
+        module: 'writable',
+        exports: 'writable',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+  {
     ignores: ['dist/**', 'node_modules/**'],
   },
 );
