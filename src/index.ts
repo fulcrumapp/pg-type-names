@@ -14,10 +14,10 @@ export interface PgTypeNames {
   descriptions: Record<string, string>;
 }
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const currentDir = dirname(fileURLToPath(import.meta.url));
 
 const raw: TypeEntry[] = JSON.parse(
-  readFileSync(join(__dirname, 'types.json'), 'utf-8'),
+  readFileSync(join(currentDir, 'types.json'), 'utf-8'),
 );
 
 const names: Record<number, string> = {};
