@@ -1,5 +1,7 @@
-node_modules
+node_modules/
+dist/
 tmp/
 nohup.out
 npm-debug.log
 *.pid
+*.tsbuildinfo
