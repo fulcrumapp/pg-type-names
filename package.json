@@ -6,16 +6,17 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc && cp src/types.json dist/",
+    "build": "tsc && cp src/types.json dist/ && cp src/index.cjs dist/index.cjs",
     "clean": "rm -rf dist",
     "lint": "eslint src test",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
