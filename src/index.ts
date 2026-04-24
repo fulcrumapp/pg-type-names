@@ -1,6 +1,4 @@
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import raw from './types.json' with { type: 'json' };
 
 export interface TypeEntry {
   oid: number;
@@ -13,12 +11,6 @@ export interface PgTypeNames {
   oids: Record<string, number>;
   descriptions: Record<string, string>;
 }
-
-const currentDir = dirname(fileURLToPath(import.meta.url));
-
-const raw: TypeEntry[] = JSON.parse(
-  readFileSync(join(currentDir, 'types.json'), 'utf-8'),
-);
 
 const names: Record<number, string> = {};
 const oids: Record<string, number> = {};
