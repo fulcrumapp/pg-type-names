@@ -47,6 +47,20 @@ npm run lint
 npm run validate
 ```
 
+## Releases
+
+Pull requests, merge queue entries and main changes run CI on GitHub-hosted
+runners. After main validation succeeds, a GitHub App commits the next version
+to `package.json` and creates its matching SemVer tag. Do not edit the root
+package version manually. Tag creation starts the GitHub Packages publishing
+workflow; this repository does not publish to npmjs.org.
+
+Before enabling releases, configure fork-run approval, required CI checks,
+GitHub Packages access, and the release App's branch and tag protection
+bypasses. Disable the old Tekton publisher at cutover. If publishing fails,
+rerun the tag workflow against the same tag; it verifies the release commit and
+the package version before publishing.
+
 ## License
 
 BSD-3-Clause
